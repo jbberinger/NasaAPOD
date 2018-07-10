@@ -26,7 +26,9 @@ public class ApodView {
     static final Logger LOGGER = Logger.getLogger(ApodView.class.getName());
     static Apod apod;
     
-    /** Waits until image is loaded before displaying the program window. **/
+    /** 
+     * Waits until image is loaded before displaying the program window. 
+     **/
     public static void main(String[] args) {
         try {
             SwingUtilities.invokeAndWait(() -> {
@@ -51,11 +53,12 @@ public class ApodView {
 
         JTextArea textArea = new JTextArea(apod.getBasicInfo());
         textArea.setEditable(false);
-        textArea.setBackground(Color.black);
+        textArea.setBackground(Color.white);
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
-        textArea.setFont(new Font("Arial", Font.PLAIN, 15));
-        textArea.setForeground(new Color(209, 45, 0));
+        textArea.setFont(new Font("Monospaced", Font.BOLD, 17));
+        textArea.setForeground(Color.black);
+        //textArea.setForeground(new Color(209, 45, 0));
         textArea.setMargin(new Insets(2, 2, 2, 2));
 
         JScrollPane scrollPane = new JScrollPane(textArea);
